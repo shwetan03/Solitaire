@@ -1,0 +1,44 @@
+public class Panels
+{
+    JFrame frame;
+    JPanel panel;
+    private JButton addButton;
+    private JButton modifyButton;
+    private JButton deleteButton;
+
+    Panels()
+    {
+        initGUI();
+        launchFrame();
+    }
+
+    public void initGUI()
+    {
+        frame = new JFrame();
+        panel = new JPanel();
+        addButton = new JButton("Add");
+        modifyButton = new JButton("Modify");
+        deleteButton = new JButton("Delete");
+    }
+
+    public void launchFrame()
+    {
+        addButton.setBounds(130,50,225,25);
+        addButton.setBounds(150,50,225,25);
+        addButton.setBounds(170,50,225,25);
+        addButton.setBounds(190,50,225,25);
+        panel.add(addButton);
+        panel.add(modifyButton);
+        panel.add(deleteButton);
+        panel.setLayout(null);
+        panel.setBackground(Color.RED);
+
+        frame.add(panel);
+        frame.setTitle("My Frame with Panel");
+        frame.setSize(600,400);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
