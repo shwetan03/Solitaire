@@ -16,6 +16,16 @@ class Card {
         this.suit = suit;
         this.number = number;
     }
+
+    public String getSuit()
+    {
+        return suit;
+    }
+
+    public String getNumber()
+    {
+        return number;
+    }
 }
 
 class SolitaireGame {
