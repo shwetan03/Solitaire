@@ -14,4 +14,16 @@ public class CardList
     {
         return tail;
     }
+    
+    public void add(Card card) {
+        if (head == null) {
+            head = new CardListNode(card);
+            tail = head;
+            head.setNext(head);
+
+        } else {
+            tail.setNext(new CardListNode(card, head));
+            tail = tail.getNext();
+        }
+    }
 }
