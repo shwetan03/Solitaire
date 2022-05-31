@@ -4,10 +4,12 @@ import java.util.*;
 
 public class SolitaireGame {
     private ArrayList<Card> deck;
+    private CardList cardPile;
 
     public SolitaireGame()
     {
         this.deck = makeDeck();
+        this.cardPile = makeCardPile();
     }
 
     public static ArrayList<Card> makeDeck()
@@ -28,6 +30,16 @@ public class SolitaireGame {
         Collections.shuffle(deck);
 
         return deck;
+    }
+
+    public CardList makeCardPile() {
+        CardList cardPile = new CardList();
+        for (int i = 0; i < 24; i++)
+        {
+            Card a = deck.remove(0);
+            cardPile.add(a);
+        }
+        return cardPile;
     }
 
     public ArrayList<Card> getDeck()
