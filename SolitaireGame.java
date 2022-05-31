@@ -5,11 +5,13 @@ import java.util.*;
 public class SolitaireGame {
     private ArrayList<Card> deck;
     private CardList cardPile;
+    private ArrayList<Stack<Card>> cardStacks;
 
     public SolitaireGame()
     {
         this.deck = makeDeck();
         this.cardPile = makeCardPile();
+        this.cardStacks = makeCardStacks();
     }
 
     public static ArrayList<Card> makeDeck()
@@ -42,8 +44,46 @@ public class SolitaireGame {
         return cardPile;
     }
 
+    public ArrayList<Stack<Card>> makeCardStacks() {
+        ArrayList<Stack<Card>> cardStacks = new ArrayList<>();
+        for (int i = 0; i < 7; i++)
+        {
+            cardStacks.add(new Stack<>());
+        }
+
+        for (int i = 0; i < deck.size(); i++)
+        {
+            if (i == 0) {
+                cardStacks.get(0).push(deck.get(i));
+            } else if (i < 3) {
+                cardStacks.get(1).push(deck.get(i));
+            } else if (i < 6) {
+                cardStacks.get(2).push(deck.get(i));
+            } else if (i < 10) {
+                cardStacks.get(3).push(deck.get(i));
+            } else if (i < 15) {
+                cardStacks.get(4).push(deck.get(i));
+            } else if (i < 21) {
+                cardStacks.get(5).push(deck.get(i));
+            } else {
+                cardStacks.get(6).push(deck.get(i));
+            }
+        }
+        return cardStacks;
+    }
+
     public ArrayList<Card> getDeck()
     {
         return deck;
+    }
+
+    public CardList getCardPile()
+    {
+        return cardPile;
+    }
+
+    public ArrayList<Stack<Card>> getCardStacks()
+    {
+        return cardStacks;
     }
 }
