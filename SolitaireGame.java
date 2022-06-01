@@ -81,6 +81,10 @@ public class SolitaireGame {
         }
         return topCards;
     }
+    
+    public Card showCardPileTopCard() {
+        return cardPile.getHead().getCard();
+    }
 
     public ArrayList<Card> getDeck()
     {
