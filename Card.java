@@ -1,11 +1,11 @@
 package com.company;
 
 public class Card {
-    private String suit;
+    private Suit suit;
     private String number;
     private int value;
 
-    public Card(String suit, String number)
+    public Card(Suit suit, String number)
     {
         this.suit = suit;
         this.number = number;
@@ -24,8 +24,7 @@ public class Card {
         }
     }
 
-    public String getSuit()
-    {
+    public Suit getSuit() {
         return suit;
     }
 
