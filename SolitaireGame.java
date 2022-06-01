@@ -16,7 +16,7 @@ public class SolitaireGame {
 
     public static ArrayList<Card> makeDeck()
     {
-        String[] suits = {"hearts", "diamonds", "spades", "clubs"};
+        Suit[] suits = {Suit.CLUBS, Suit.DIAMONDS, Suit.HEARTS, Suit.SPADES};
         String[] numbers = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
         ArrayList<Card> deck = new ArrayList<>();
@@ -71,7 +71,7 @@ public class SolitaireGame {
         }
         return cardStacks;
     }
-    
+
     public ArrayList<Card> showTopCards() {
         ArrayList<Card> topCards = new ArrayList<>();
         for (int i = 0; i < cardStacks.size(); i++)
