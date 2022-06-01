@@ -71,6 +71,16 @@ public class SolitaireGame {
         }
         return cardStacks;
     }
+    
+    public ArrayList<Card> showTopCards() {
+        ArrayList<Card> topCards = new ArrayList<>();
+        for (int i = 0; i < cardStacks.size(); i++)
+        {
+            topCards.add(cardStacks.get(i).peek());
+            System.out.println(cardStacks.get(i).peek().getNumber() + " " + cardStacks.get(i).peek().getSuit());
+        }
+        return topCards;
+    }
 
     public ArrayList<Card> getDeck()
     {
