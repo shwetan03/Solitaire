@@ -3,12 +3,14 @@ package com.company;
 public class Card {
     private Suit suit;
     private String number;
+    private boolean isReversed;
     private int value;
 
     public Card(Suit suit, String number)
     {
         this.suit = suit;
         this.number = number;
+        this.isReversed = true;
         try {
             this.value = Integer.parseInt(this.number);
         } catch (Exception e) {
@@ -22,6 +24,14 @@ public class Card {
                 this.value = 13;
             }
         }
+    }
+
+    public void hide() {
+        isReversed = true;
+    }
+
+    public void show() {
+        isReversed = false;
     }
 
     public Suit getSuit() {
